@@ -76,8 +76,11 @@
             }
         ],
         "table_name": "BCG",
-        "status": "Pass",
-        "reason": {}
+        "status": "Fail",
+        "reason": {
+            "1": "len(body) == expected['length'] returned False",
+            "2": "body[0]['location'] == expected['location'] -> 'location'"
+        }
     },
     "test-2": {
         "payload": {
@@ -159,7 +162,7 @@
         "status": "Fail",
         "reason": {
             "1": "len(body) == expected['length'] returned False",
-            "2": "body[0]['location'] == expected['location'] -> list index out of range"
+            "2": "body[0]['location'] == expected['location'] -> 'location'"
         }
     }
 }

@@ -4,7 +4,7 @@ os.environ["AWS_DEFAULT_REGION"] = "ap-south-1"
 
 # Project Paths
 project_root = os.path.abspath(
-    os.path.join(os.path.dirname(__file__), "../../../")
+    os.path.join(os.path.dirname(__file__), "../../")
 )
 
 src_path = os.path.join(project_root, "src")
@@ -13,7 +13,7 @@ sys.path.insert(0, src_path)
 sys.path.insert(0, project_root)
 print("SRC path:", src_path)
 
-from integration_testing.mock_database.database import MockDatabase
+from mock_database.database import MockDatabase
 fake_db = MockDatabase()
 boto3.client = lambda service, **kwargs: fake_db
 from src.leads.api import lambda_handler
@@ -21,7 +21,6 @@ from src.leads.api import lambda_handler
 # JSON Test File
 TEST_CASE_FILE = os.path.join(
     project_root,
-    "integration_testing",
     "modules",
     "leads_test",
     "test_cases.json"
@@ -29,12 +28,10 @@ TEST_CASE_FILE = os.path.join(
 
 RESULT_FILE = os.path.join(
     project_root,
-    "integration_testing",
     "modules",
     "leads_test",
     "test_results.json"
 )
-
 
 # -------------------------------
 # Load Test Cases
