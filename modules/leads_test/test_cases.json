@@ -1,0 +1,158 @@
+{
+    "test-1": {
+        "payload": {
+            "headers": {
+                "location": "ssc",
+                "sorting": "lastContacted#DESC",
+                "lastevaluatedkey": "None"
+            },
+            "requestContext": {
+                "http": {
+                    "method": "GET",
+                    "path": "/v1/leads"
+                },
+                "authorizer": {
+                    "lambda": {
+                        "table_name": "BCG"
+                    }
+                }
+            }
+        },
+        "expected": {
+            "length": 1,
+            "location": "ssc"
+        },
+        "result": {
+            "1": "len(body) == expected['length']",
+            "2": "body[0]['location'] == expected['location']"
+        },
+        "feed_data": [
+            {
+                "PK": "parent_7c0e5760-51ed-5221-929c-a17693f5c432",
+                "SK": "PROFILE",
+                "dateOfBirth": "2023-01-19",
+                "doc_count": "0",
+                "email": "rohan@reachandteach.in",
+                "enquiry_added_date": "2026-03-09 13:38:40",
+                "firstName": "Test",
+                "grade": "Nursery",
+                "journeys": [
+                  {
+                  "PK": "parent_7c0e5760-51ed-5221-929c-a17693f5c432",
+                  "SK": "journey_099e6bcd-20e0-5724-b8f0-d68a9a16261d",
+                  "cycle_id": "cycle_4a7477ad-01dc-5eed-b28e-1b0420390308",
+                  "description": "",
+                  "grade": "Nursery",
+                  "journey_loc": "ssc",
+                  "journey_time": "2026-03-09 13:46:04",
+                  "response": "PARENT ADDED VIA Form",
+                  "showWhatsapp": "true",
+                  "subject_name": "",
+                  "task_source": "Google",
+                  "TYPE": "JOURNEY",
+                  "TYPESORT": "DB"
+                  }
+                ],
+                "lastContacted": "2026-03-09 13:46:04",
+                "lastName": "Enquiry",
+                "location": "ssc",
+                "PHONE": 9699605540,
+                "pincode": "111111",
+                "source": "Google",
+                "status_score": "2",
+                "studentFirstName": "test",
+                "studentLastName": "enquiry",
+                "TYPE": "PROFILE",
+                "TYPESORT": "PROFILE",
+                "user": "unassigned"
+            },
+            {
+                "PK": "VARS",
+                "SK": "VARS",
+                "vars": {
+                    "table_name": "BCG",
+                    "environment": "dev"
+                }
+            }
+        ],
+        "table_name": "BCG"
+    },
+    "test-2": {
+        "payload": {
+            "headers": {
+                "location": "igcse",
+                "sorting": "lastContacted#DESC",
+                "lastevaluatedkey": "None"
+            },
+            "requestContext": {
+                "http": {
+                    "method": "GET",
+                    "path": "/v1/leads"
+                },
+                "authorizer": {
+                    "lambda": {
+                        "table_name": "BCG"
+                    }
+                }
+            }
+        },
+        "expected": {
+            "length": 1,
+            "location": "igcse"
+        },
+        "result": {
+            "1": "len(body) == expected['length']",
+            "2": "body[0]['location'] == expected['location']"
+        },
+        "feed_data": [
+            {
+                "PK": "parent_7c0e5760-51ed-5221-929c-a17693f5c432",
+                "SK": "PROFILE",
+                "dateOfBirth": "2023-01-19",
+                "doc_count": "0",
+                "email": "rohan@reachandteach.in",
+                "enquiry_added_date": "2026-03-09 13:38:40",
+                "firstName": "Test",
+                "grade": "Prep",
+                "journeys": [
+                  {
+                  "PK": "parent_7c0e5760-51ed-5221-929c-a17693f5c432",
+                  "SK": "journey_099e6bcd-20e0-5724-b8f0-d68a9a16261d",
+                  "cycle_id": "cycle_4a7477ad-01dc-5eed-b28e-1b0420390308",
+                  "description": "",
+                  "grade": "Prep",
+                  "journey_loc": "ssc",
+                  "journey_time": "2026-03-09 13:46:04",
+                  "response": "PARENT ADDED VIA Form",
+                  "showWhatsapp": "true",
+                  "subject_name": "",
+                  "task_source": "Google",
+                  "TYPE": "JOURNEY",
+                  "TYPESORT": "DB"
+                  }
+                ],
+                "lastContacted": "2026-03-09 13:46:04",
+                "lastName": "Enquiry",
+                "location": "ssc",
+                "PHONE": 9699605540,
+                "pincode": "111111",
+                "source": "Google",
+                "status_score": "2",
+                "studentFirstName": "test",
+                "studentLastName": "enquiry",
+                "TYPE": "PROFILE",
+                "TYPESORT": "PROFILE",
+                "user": "unassigned"
+            },
+            {
+                "PK": "VARS",
+                "SK": "VARS",
+                "vars": {
+                    "table_name": "BCG",
+                    "environment": "dev"
+                }
+            }
+        ],
+        "table_name": "BCG"
+    }
+}
